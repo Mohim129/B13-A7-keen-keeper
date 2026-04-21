@@ -1,16 +1,14 @@
-# React + Vite
+# KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal relationship manager that helps you stay connected with friends by tracking contact frequency, setting goals, and logging interactions.
 
-Currently, two official plugins are available:
+## Technologies Used
+- React.js / Next.js
+- Tailwind CSS
+- Recharts
+- React Router DOM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+1. **Friend Dashboard** – View all friends in a responsive card grid with real-time status indicators based on days since last contact.
+2. **Interaction Timeline** – Log calls, texts, and video chats with a single click and review your communication history in a filterable timeline.
+3. **Friendship Analytics** – Visualize your communication patterns with an interactive pie chart showing the breakdown of interaction types.
