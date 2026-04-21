@@ -6,11 +6,11 @@ const TimelineProvider = ({children}) => {
 
         const [timeline, setTimeline] = useState([]);
 
-        const callImg = "https://ibb.co.com/27G2QTWP";
-        const videoImg = "https://ibb.co.com/d4H7zrVg";
-        const textImg = "https://ibb.co.com/cXFrVfX6";
+        const callImg = "https://i.ibb.co.com/N6chPMtp/call.png";
+        const videoImg = "https://i.ibb.co.com/Ldsv28c5/video.png";
+        const textImg = "https://i.ibb.co.com/Cs7HDCsb/text.png";
 
-        const handleTimeline = (name, action) => {
+        const handleTimeline = (name, action, time) => {
 
             // let callCount = 0;
             // let textCount = 0;
@@ -20,6 +20,7 @@ const TimelineProvider = ({children}) => {
             const newLog = {
               name: name,
               action: action,
+              time: time,
               image: callImg,
               
             };
@@ -29,6 +30,7 @@ const TimelineProvider = ({children}) => {
             const newLog = {
               name: name,
               action: action,
+              time: time,
               image: videoImg,
             };
             // textCount= textCount+1
@@ -37,6 +39,7 @@ const TimelineProvider = ({children}) => {
             const newLog = {
               name: name,
               action: action,
+              time: time,
               image: textImg,
             };
             setTimeline([...timeline, newLog]);

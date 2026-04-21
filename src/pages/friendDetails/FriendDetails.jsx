@@ -17,9 +17,9 @@ const FriendDetails = () => {
     const { name, picture, email, days_since_contact, status, tags, bio, goal, next_due_date } = expectedFriend;
 
 
-    const {handleTimeline, timeline} = useContext(TimelineContext)
-    console.log( timeline)
-
+    const {handleTimeline} = useContext(TimelineContext)
+    // console.log( timeline)
+    const date = new Date();
 
     // console.log(timeline)
 
@@ -116,21 +116,21 @@ const FriendDetails = () => {
             </div>
             <div className="flex">
               <div
-                onClick={() => handleTimeline(name, "call")}
+                onClick={() => handleTimeline(name, "call", date )}
                 className="p-4 flex-1 gap-2 grid justify-center items-center"
               >
                 <PhoneCall></PhoneCall>
                 <p>Call</p>
               </div>
               <div
-                onClick={() => handleTimeline(name, "text")}
+                onClick={() => handleTimeline(name, "text", date)}
                 className="p-4 flex-1 gap-2 grid justify-center items-center"
               >
                 <MessageSquareText></MessageSquareText>
                 <p>Text</p>
               </div>
               <div
-                onClick={() => handleTimeline(name, "video")}
+                onClick={() => handleTimeline(name, "video", date)}
                 className="p-4 flex-1 gap-2 grid justify-center items-center"
               >
                 <Video></Video>
