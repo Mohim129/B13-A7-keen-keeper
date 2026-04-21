@@ -1,24 +1,27 @@
 import { Archive, BellMinus, MessageSquareText, PhoneCall, Trash2, Video } from 'lucide-react';
-import React, { use, useState } from 'react';
+import React, { use, useContext, } from 'react';
 import { useParams } from 'react-router';
+import { TimelineContext } from '../../context/TimelineContext';
 
 
 const friendsPromise = fetch("/friendData.json").then(res => res.json())
 
-const [timeline, setTimeline] = useState([])
-const handleTimeline = (id,action)=>{
-console.log(id,action)
-}
+
 
 const FriendDetails = () => {
     const {id} = useParams()
     const friends = use(friendsPromise)
-    // console.log(friends)
 
     const expectedFriend = friends.find(friend=> friend.id == id)
-    // console.log(expectedFriend)
 
     const { name, picture, email, days_since_contact, status, tags, bio, goal, next_due_date } = expectedFriend;
+
+
+    const {handleTimeline, timeline} = useContext(TimelineContext)
+    console.log( timeline)
+
+
+    // console.log(timeline)
 
     return (
       <div className=" grid md:flex gap-6 container mt-20 mx-auto">
@@ -112,15 +115,24 @@ const FriendDetails = () => {
               </h3>
             </div>
             <div className="flex">
-              <div onClick={()=> handleTimeline(id, 'call')} className="p-4 flex-1 gap-2 grid justify-center items-center">
+              <div
+                onClick={() => handleTimeline(name, "call")}
+                className="p-4 flex-1 gap-2 grid justify-center items-center"
+              >
                 <PhoneCall></PhoneCall>
                 <p>Call</p>
               </div>
-              <div className="p-4 flex-1 gap-2 grid justify-center items-center">
+              <div
+                onClick={() => handleTimeline(name, "text")}
+                className="p-4 flex-1 gap-2 grid justify-center items-center"
+              >
                 <MessageSquareText></MessageSquareText>
                 <p>Text</p>
               </div>
-              <div className="p-4 flex-1 gap-2 grid justify-center items-center">
+              <div
+                onClick={() => handleTimeline(name, "video")}
+                className="p-4 flex-1 gap-2 grid justify-center items-center"
+              >
                 <Video></Video>
                 <p>Video</p>
               </div>
