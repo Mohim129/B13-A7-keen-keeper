@@ -6,7 +6,7 @@ import FriendsList from '../../components/friendsList/FriendsList';
 const friendsPromise = fetch("/friendData.json").then((res) => res.json());
 const Homepage = () => {
     const friends = use(friendsPromise)
-    console.log(friends)
+    // console.log(friends)
     return (
       <div>
         <Hero></Hero>

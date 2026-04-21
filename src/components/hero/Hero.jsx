@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-base-200 mt-20 mb-5">
         <div className="hero-content text-center">
           <div className="">
             <h1 className="text-5xl font-bold text-[#1F2937]">

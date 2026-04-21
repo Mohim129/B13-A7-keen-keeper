@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FriendCard = ({friend}) => {
-    console.log(friend)
+    // console.log(friend)
     return (
-      <div className="bg-white shadow-sm p-6 rounded-xl">
+      <Link to={`friendDetails/${friend.id}`} className="bg-white shadow-sm p-6 rounded-xl">
         <div className="card justify-center items-center gap-2">
           <figure className="w-20 rounded-full mb-1">
             <img src={friend.picture} alt="" />
@@ -11,8 +12,8 @@ const FriendCard = ({friend}) => {
           <h3>{friend.name}</h3>
           <p>{friend.days_since_contact}d</p>
           <div className="flex">
-            {friend.tags.map((tag) => (
-              <p className="badge text-xs text-green-600 bg-green-200">{tag}</p>
+            {friend.tags.map((tag,index) => (
+              <p key={index} className="badge text-xs text-green-600 bg-green-200">{tag}</p>
             ))}
           </div>
           <button
@@ -28,7 +29,7 @@ const FriendCard = ({friend}) => {
             {friend.status}
           </button>
         </div>
-      </div>
+      </Link>
     );
 };
 
