@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const TimelineContext = createContext();
 
@@ -24,7 +25,7 @@ const TimelineProvider = ({children}) => {
               image: callImg,
               
             };
-            // callCount=callCount+1
+            toast("You made a call");
             setTimeline([...timeline, newLog]);
           } else if (action === "video") {
             const newLog = {
@@ -33,7 +34,7 @@ const TimelineProvider = ({children}) => {
               time: time,
               image: videoImg,
             };
-            // textCount= textCount+1
+            toast("You made a Video");
             setTimeline([...timeline, newLog]);
           } else {
             const newLog = {
@@ -42,6 +43,7 @@ const TimelineProvider = ({children}) => {
               time: time,
               image: textImg,
             };
+            toast("You sent a text");
             setTimeline([...timeline, newLog]);
           }
         };

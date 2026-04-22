@@ -2,6 +2,8 @@ import { Archive, BellMinus, MessageSquareText, PhoneCall, Trash2, Video } from 
 import React, { use, useContext, } from 'react';
 import { useParams } from 'react-router';
 import { TimelineContext } from '../../context/TimelineContext';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const friendsPromise = fetch("/friendData.json").then(res => res.json())
@@ -22,6 +24,7 @@ const FriendDetails = () => {
     const date = new Date();
 
     // console.log(timeline)
+    
 
     return (
       <div className=" grid md:flex gap-6 container mt-20 mx-auto">
@@ -116,9 +119,12 @@ const FriendDetails = () => {
             </div>
             <div className="flex">
               <div
-                onClick={() => handleTimeline(name, "call", date )}
+                onClick={() => {
+                  handleTimeline(name, "call", date);
+                }}
                 className="p-4 flex-1 gap-2 grid justify-center items-center"
               >
+                <ToastContainer></ToastContainer>
                 <PhoneCall></PhoneCall>
                 <p>Call</p>
               </div>
