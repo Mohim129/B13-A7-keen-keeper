@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TimelineContext } from '../../context/TimelineContext';
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 const Stats = () => {
     const {timeline} = useContext(TimelineContext)
@@ -50,6 +50,7 @@ const Stats = () => {
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
+                    <Tooltip />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

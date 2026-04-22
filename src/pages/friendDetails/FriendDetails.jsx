@@ -3,7 +3,7 @@ import React, { use, useContext, } from 'react';
 import { useParams } from 'react-router';
 import { TimelineContext } from '../../context/TimelineContext';
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 
 const friendsPromise = fetch("/friendData.json").then(res => res.json())
